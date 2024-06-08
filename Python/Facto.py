@@ -14,3 +14,4 @@ def factorize(n):
 # Exemple d'utilisation
 x = 27773
 print(f"Les facteurs de {x} sont : {factorize(x)}")
+#nullos
