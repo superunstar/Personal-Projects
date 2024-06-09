@@ -1,6 +1,6 @@
-def factorize(n):
-    factors = []
-    divisor = 2
+def factorize(n): #defini la fonction "factorize"
+    factors = [] #liste pour ranger les facteurs
+    divisor = 2 
     
     while n >= 2:
         if n % divisor == 0:
@@ -10,8 +10,3 @@ def factorize(n):
             divisor += 1
             
     return factors
-
-# Exemple d'utilisation
-x = 27773
-print(f"Les facteurs de {x} sont : {factorize(x)}")
-#nullos
