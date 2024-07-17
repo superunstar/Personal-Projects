@@ -13,7 +13,7 @@ def decode(code, key):
         letter_position = (code[x] - 1) - key1[x % n] # Calculate the position of the decrypted letter in the alphabet
         letter = alphabet[letter_position] # Get the decrypted letter from the alphabet list
         decrypted_message.append(letter) # Append the decrypted letter to the decrypted message list
-        x += 1 # Move to the next position in the code
+        x += 1 # Move to the next position in the code.
         result = ''.join(decrypted_message) # Join the list of decrypted letters into a single string
     return result # Return the decrypted message
 
