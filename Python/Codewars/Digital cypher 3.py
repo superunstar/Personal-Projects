@@ -1,34 +1,23 @@
-#https://www.codewars.com/kata/5930d8a4b8c2d9e11500002a/train/python
-
 def find_the_key(message, code):
-    alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'] # Define the alphabet as a list of characters
-    message1 = message + message + message
-    message_list = [str(c) for c in message1]
-    
-    x = 0
-    n = len(code)
-    
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
     decrypted_key = []
     
-    while x < len(message1):
-        letter = message_list[x]
-        letter_pos = alphabet.index(str(letter)) + 1
-        if code[x%n] < letter_pos:
-            result = letter_pos - code[x%n]
-            print(result)
-            decrypted_key.append(result)
-        else:
-            result = code[x%n] - letter_pos
-            print(result)
-            decrypted_key.append(result)
-        fstvalue = decrypted_key[0]
-        fstrepeat = decrypted_key.index(fstvalue)
-        
-        
-        x += 1
-        
-        
+    # Calcul de la clé déchiffrée
+    for i in range(len(message)):
+        letter_pos = alphabet.index(message[i]) + 1
+        key_digit = code[i] - letter_pos
+        decrypted_key.append(str(key_digit))
+    
+    cle_str = ''.join(decrypted_key)
+    
+    # Recherche de la plus courte sous-chaîne répétée
+    for i in range(1, len(cle_str) + 1):
+        if cle_str[:i] * (len(cle_str) // i) == cle_str[:len(cle_str)]:
+            return cle_str[:i]
+    
+    return cle_str
+
 message = "scout"
 clé = [20, 12, 18, 30, 21]
 
-print(find_the_key(message, clé))
+print(find_the_key(message, clé))  # Cela devrait afficher "1939"
