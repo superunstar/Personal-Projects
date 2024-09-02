@@ -1,5 +1,6 @@
-cle_str = "19391939"
+ma_liste = [1, 2, 3, 4, 10, 6, 7, 8, 9]
 
-for i in range(1, len(cle_str)):
-        if cle_str[:i] * (len(cle_str) // i) == cle_str[:len(cle_str)]:
-            print("FOUND! : " + cle_str[:i])
+# On garde seulement les éléments jusqu'à la position 5 (index 4)
+ma_liste = ma_liste[:5]
+
+print(ma_liste)
