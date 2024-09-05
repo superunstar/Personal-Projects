@@ -20,6 +20,6 @@ def encode(message, key):
 
 
 message = "masterpiece"
-clé = "1939"
+clé = "13143"
 
 print(encode(message, clé))

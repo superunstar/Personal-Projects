@@ -19,7 +19,9 @@ def find_the_key(message, code):
             result = code[x%n] - letter_pos
             decrypted_key.append(str(result))
         
-        x += 1 
+        x += 1
+
+    print(decrypted_key)
     
     for i in range(1, len(code)):
         c = decrypted_key[i]
@@ -30,6 +32,6 @@ def find_the_key(message, code):
         
         
 message = "masterpiece"
-clé = [14, 10, 22, 29, 6, 27, 19, 18, 6, 12, 8]
+clé = [14, 4, 20, 24, 8, 19, 19, 10, 9, 6, 6]
 
 print(find_the_key(message, clé))
